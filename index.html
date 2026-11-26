@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pannelists: manga and manhwa worth reading next.">
+  <title>Pannelists | Manga and Manhwa Picks</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER: logo, navigation, dark-mode button -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="#home">Pannelists</a>
+      <div class="header-right">
+        <nav class="nav" id="nav" aria-label="Main">
+          <ul>
+            <li><a href="#manga">Manga</a></li>
+            <li><a href="#manhwa">Manhwa</a></li>
+            <li><a href="#starter-picks">Starter Picks</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="btn" id="theme-toggle" type="button">Dark mode</button>
+        <button class="btn nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HOME: headline, greeting (filled in by app.js) and two big links -->
+    <section id="home" class="hero" aria-labelledby="home-title">
+      <div class="wrap hero-inner">
+        <h1 id="home-title">A site made by a larper.</h1>
+        <p class="lede">Read some good stuff so you could also larp.</p>
+        <p class="greeting" id="greeting" aria-live="polite"></p>
+        <div class="hero-grid">
+          <a class="hero-card manga" href="#manga"><h2>Manga</h2><p>Japanese comics read right to left, in black and white.</p><span>Browse manga</span></a>
+          <a class="hero-card manhwa" href="#manhwa"><h2>Manhwa</h2><p>Korean comics made to scroll, in full color.</p><span>Browse manhwa</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS: three groups of series -->
+    <section id="manga" aria-labelledby="manga-title">
+      <div class="wrap">
+        <h2 id="manga-title">Manga</h2>
+        <p class="intro">We go less go.</p>
+        <ul class="series">
+        <li class="item">
+          <article>
+            <div class="cover">Hellsing<img src="images/covers/hellsing.jpg" alt="Hellsing cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Hellsing</h3>
+            <p>Lights Camera Action</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Berserk<img src="images/covers/berserk.jpg" alt="Berserk cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Berserk</h3>
+            <p>Read if you have guts.</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Tokyo Ghoul<img src="images/covers/tokyo.jpg" alt="Tokyo Ghoul cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Tokyo Ghoul</h3>
+            <p>1000-7</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Grand Blue<img src="images/covers/grandblue.jpg" alt="Grand Blue cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Grand Blue</h3>
+            <p>Tear jerker</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Vinland Saga<img src="images/covers/vinland-saga.jpg" alt="Vinland Saga cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Vinland Saga</h3>
+            <p>I got no enemies?</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Pumpkin Night<img src="images/covers/pumpkin.jpg" alt="Pumpkin Night cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Pumpkin Night</h3>
+            <p>Pumpkin Garl</p>
+          </article>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="manhwa" aria-labelledby="manhwa-title">
+      <div class="wrap">
+        <h2 id="manhwa-title">Manhwa</h2>
+        <p class="intro">Next One less go we go.</p>
+        <ul class="series">
+        <li class="item">
+          <article>
+            <div class="cover">Solo Leveling<img src="images/covers/solo-leveling.jpg" alt="Solo Leveling cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Solo Leveling</h3>
+            <p>Aura farmer</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Tower of God<img src="images/covers/tower-of-god.jpg" alt="Tower of God cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Tower of God</h3>
+            <p>RAACHEEL</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Circles<img src="images/covers/circles.jpg" alt="Circles cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Circles</h3>
+            <p>Drama</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">The Beginning After the End<img src="images/covers/tbate.jpg" alt="The Beginning After the End cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>The Beginning After the End</h3>
+            <p>Beginninging</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Omniscient Reader<img src="images/covers/orv.jpg" alt="Omniscient Reader cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Omniscient Reader</h3>
+            <p>Dokjak</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Shadow Slave<img src="images/covers/shadow.jpg" alt="Shadow Slave cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Shadow Slave</h3>
+            <p>Absolute sinema</p>
+          </article>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="starter-picks" aria-labelledby="starter-picks-title">
+      <div class="wrap">
+        <h2 id="starter-picks-title">Starter Picks</h2>
+        <p class="intro">New to manga and manhwa? Start with these six. They are easy to follow and hard to put down.</p>
+        <ul class="series">
+        <li class="item">
+          <article>
+            <div class="cover">Tokyo Ghoul<img src="images/covers/tokyo.jpg" alt="Tokyo Ghoul cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Tokyo Ghoul</h3>
+            <p>Manga</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Grand Blue<img src="images/covers/grandblue.jpg" alt="Grand Blue cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Grand Blue</h3>
+            <p>Manga</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Solo Leveling<img src="images/covers/solo-leveling.jpg" alt="Solo Leveling cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Solo Leveling</h3>
+            <p>Manhwa</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Tower of God<img src="images/covers/tower-of-god.jpg" alt="Tower of God cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Tower of God</h3>
+            <p>Manhwa</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Vinland Saga<img src="images/covers/vinland-saga.jpg" alt="Vinland Saga cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Vinland Saga</h3>
+            <p>Manga</p>
+          </article>
+        </li>
+        <li class="item">
+          <article>
+            <div class="cover">Circles<img src="images/covers/circles.jpg" alt="Circles cover" loading="lazy" onerror="this.remove()"></div>
+            <h3>Circles</h3>
+            <p>Manhwa</p>
+          </article>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <h2 id="about-title">About Me?</h2>
+        <div class="about-card"><p>From Dapdap</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Contact</h2>
+        <p class="intro">Have a series we should add? Send it over.</p>
+        <a class="contact-link" href="mailto:Pannelist@gmail.com?subject=Series%20recommendation">Pannelist@gmail.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Pannelists</strong> - Manga and manhwa worth reading next.</p>
+      <p class="copy">&copy; 2026 Pannelists. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ZOOM POP-UP: filled in by app.js when a card is clicked -->
+  <dialog id="viewer" aria-label="Zoomed series">
+    <div id="viewer-body"></div>
+    <button class="btn" id="viewer-close" type="button">Close</button>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

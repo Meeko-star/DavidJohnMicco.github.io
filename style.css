@@ -1,0 +1,117 @@
+/* ==========================================================
+   Pannelists - style.css
+   Sections: 1 Variables | 2 Base | 3 Header | 4 Hero
+             5 Series cards | 6 About + Contact | 7 Footer
+             8 Responsive (media queries)
+   ========================================================== */
+
+/* 1. VARIABLES - light theme by default, dark theme via [data-theme="dark"] */
+:root{
+  --bg:#f3f1fa; --text:#15142b; --card:#ffffff; --edge:#15142b;
+  --navy:#15142b;                       /* header + footer (same in both themes) */
+  --manga:#d7263d; --manhwa:#6c4cf1; --pop:#ffd23f;
+  --head:"Dela Gothic One","Arial Black",sans-serif;
+  --body:"Figtree",system-ui,sans-serif;
+  --wrap:1100px;
+}
+:root[data-theme="dark"]{
+  --bg:#0f0e1f; --text:#f3f1fa; --card:#1c1b38; --edge:#7d78b5;
+}
+
+/* 2. BASE */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}   /* keeps sections clear of the sticky header */
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:1.05rem;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--pop);outline-offset:3px}
+h1,h2{font-family:var(--head);font-weight:400;line-height:1.15;margin:0}
+.wrap{width:min(100% - 2rem,var(--wrap));margin-inline:auto}
+section{padding-block:2.5rem}
+section h2{font-size:clamp(1.8rem,4vw,2.6rem);border-left:10px solid var(--accent,var(--manga));padding-left:1rem;margin-bottom:.75rem}
+.intro{margin:0 0 1.5rem;max-width:62ch}
+
+/* 3. HEADER + NAVIGATION */
+.site-header{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;border-bottom:4px solid var(--manga)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:.7rem}
+.logo{font-family:var(--head);font-size:1.15rem;text-decoration:none}
+.header-right{display:flex;align-items:center;gap:1.25rem}
+.nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+.nav a{font-weight:600;text-decoration:none;padding-block:.25rem;border-bottom:3px solid transparent}
+.nav a:hover{border-color:var(--pop)}
+.btn{background:none;color:inherit;border:2px solid #fff;padding:.3rem .7rem;font:inherit;font-weight:700;cursor:pointer}
+.btn:hover{background:#fff;color:var(--navy)}
+.nav-toggle{display:none}
+
+/* 4. HERO */
+.hero{min-height:calc(100vh - 70px);min-height:calc(100svh - 70px);display:flex;flex-direction:column}   /* fills the first screen so Manga starts below the fold */
+.hero h1{font-size:clamp(1.8rem,5vw,3.2rem);max-width:16ch}
+.lede{max-width:60ch;margin:.75rem 0 .25rem;font-size:1.15rem}
+.greeting{margin:0 0 1.5rem;font-weight:700;color:var(--manhwa)}
+:root[data-theme="dark"] .greeting{color:var(--pop)}
+.hero-grid{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:12px;background:var(--navy);padding:12px}
+.hero-card{display:flex;flex-direction:column;justify-content:flex-end;min-height:300px;padding:1.5rem;text-decoration:none}
+.hero-card h2{border:0;padding:0;font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:.5rem}
+.hero-card p{margin:0 0 .75rem;max-width:34ch}
+.hero-card span{font-weight:700;text-decoration:underline;text-decoration-thickness:3px}
+.hero-card.manga{background:#fff radial-gradient(#15142b 1.2px,transparent 1.6px) 0 0/9px 9px;color:#15142b}
+.hero-card.manga>*{background:#fff;align-self:flex-start;padding:.1rem .5rem}
+.hero-card.manga h2{color:var(--manga)}
+.hero-card.manhwa{background:linear-gradient(160deg,var(--manhwa),#2b1d8f);color:#fff}
+.hero-card:hover span{color:var(--pop)}
+.hero-card.manga:hover span{color:var(--manga)}
+
+/* 5. SERIES CARDS (projects) */
+#manga{--accent:var(--manga)} #manhwa{--accent:var(--manhwa)} #starter-picks{--accent:var(--pop)}
+.series{list-style:none;margin:0;padding:0 6px 6px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.5rem 1.25rem}
+.item{background:var(--card);border:3px solid var(--edge);box-shadow:5px 5px 0 var(--accent);transition:transform .25s ease,box-shadow .25s ease}
+.item:hover{transform:scale(1.06);position:relative;z-index:5;box-shadow:7px 7px 0 var(--accent)}   /* hover zoom */
+.cover{position:relative;aspect-ratio:3/4;display:grid;place-items:center;padding:.75rem;text-align:center;overflow:hidden;
+  font-family:var(--head);font-size:.95rem;color:#fff;border-bottom:3px solid var(--edge);
+  background:linear-gradient(160deg,var(--accent),var(--navy))}      /* shown when the image file is missing */
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.item h3{font-family:var(--head);font-weight:400;font-size:.95rem;margin:.7rem .8rem .25rem}
+.item p{margin:0 .8rem .9rem;font-size:.9rem}
+
+/* 6. ABOUT + CONTACT */
+#about,#contact{--accent:var(--manhwa)}
+.about-card{width:min(100%,520px);min-height:260px;display:grid;place-items:center;border:3px solid var(--edge);box-shadow:6px 6px 0 var(--manhwa);
+  background:url("images/about-bg.jpg") center/cover,linear-gradient(135deg,var(--manga),var(--manhwa))}
+.about-card p{background:rgba(255,255,255,.88);color:#15142b;margin:0;padding:1.25rem 1.5rem;font-weight:600;text-align:center;width:90%}
+.contact-link{display:inline-block;margin-top:.5rem;font-weight:700;font-size:1.15rem}
+
+/* 7. FOOTER */
+.site-footer{background:var(--navy);color:#fff;border-top:4px solid var(--manhwa);padding-block:1.25rem}
+.site-footer p{margin:.2rem 0}
+.copy{margin-top:1rem;color:#c9c6e6;font-size:.95rem}
+
+/* 8. RESPONSIVE - tablet and phone */
+@media (max-width:820px){
+  .nav ul{gap:1rem}
+  .hero-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .nav-toggle{display:block}
+  .nav{position:absolute;left:0;right:0;top:100%;background:var(--navy);border-bottom:4px solid var(--manga);display:none}
+  .nav.open{display:block}
+  .nav ul{flex-direction:column;gap:0}
+  .nav a{display:block;padding:.85rem 1.25rem;border:0}
+  .series{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem .9rem}
+}
+@media (max-width:380px){.series{grid-template-columns:minmax(0,260px);justify-content:center}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.item{transition:none}.item:hover{transform:none}}
+.hero-inner{display:flex;flex-direction:column;flex:1}
+
+/* 9. CLICK-TO-ZOOM POP-UP (opened by app.js) */
+.item{cursor:zoom-in}
+.item article:focus-visible{outline:3px solid var(--pop);outline-offset:3px}
+#viewer{--accent:var(--manhwa);width:min(92vw,380px);padding:1rem;border:3px solid var(--edge);background:var(--card);color:var(--text);box-shadow:8px 8px 0 var(--accent)}
+#viewer[open]{animation:zoom-in .25s ease}
+#viewer::backdrop{background:rgba(15,14,31,.78)}
+#viewer .cover{font-size:1.4rem}
+#viewer h3{font-family:var(--head);font-weight:400;font-size:1.2rem;margin:.9rem 0 .25rem}
+#viewer p{margin:0 0 .5rem}
+#viewer-close{margin-top:.5rem;border-color:var(--edge);color:var(--text)}
+#viewer-close:hover{background:var(--text);color:var(--card)}
+@keyframes zoom-in{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){#viewer[open]{animation:none}}
