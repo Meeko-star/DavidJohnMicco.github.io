@@ -76,7 +76,7 @@ section h2{font-size:clamp(1.8rem,4vw,2.6rem);border-left:10px solid var(--accen
 /* 6. ABOUT + CONTACT */
 #about,#contact{--accent:var(--manhwa)}
 .about-card{width:min(100%,520px);min-height:260px;display:grid;place-items:center;border:3px solid var(--edge);box-shadow:6px 6px 0 var(--manhwa);
-  background:url("about-bg.jpg") center/cover,linear-gradient(135deg,var(--manga),var(--manhwa))}
+  background:url("meeko.jpg") center/cover,linear-gradient(135deg,var(--manga),var(--manhwa))}
 .about-card p{background:rgba(255,255,255,.88);color:#15142b;margin:0;padding:1.25rem 1.5rem;font-weight:600;text-align:center;width:90%}
 .contact-link{display:inline-block;margin-top:.5rem;font-weight:700;font-size:1.15rem}
 
